@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击切换图片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+        
+        .click-image {
+            max-width: 95vw;
+            max-height: 95vh;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .click-image:hover {
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body>
+    <img 
+        id="mainImage" 
+        class="click-image" 
+        src="https://youke2.picui.cn/s1/2025/12/15/693fdad4d8e04.jpg"  <!-- 替换为第一张图的链接 -->
+        alt=""
+    >
+
+    <script>
+        // 替换成你两张图的网络链接
+        const image1 = "https://youke2.picui.cn/s1/2025/12/15/693fdad4d8e04.jpg"; // 第一张图（个人中心页）
+        const image2 = "https://youke2.picui.cn/s1/2025/12/15/693fdad6204b6.jpg"; // 第二张图（身份码页）
+        
+        const mainImage = document.getElementById('mainImage');
+        let isShowingImage1 = true;
+        
+        mainImage.addEventListener('click', function() {
+            this.src = isShowingImage1 ? image2 : image1;
+            isShowingImage1 = !isShowingImage1;
+        });
+    </script>
+</body>
+</html>
